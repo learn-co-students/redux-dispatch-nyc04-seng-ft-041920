@@ -10,4 +10,17 @@ function changeState(state, action){
 let state = {count: 0}
 let action = {type: 'INCREASE_COUNT'}
 
-changeState(state, action)
+function render(){
+  document.body.textContent = state.count
+}
+
+function dispatch(action) {
+  state = changeState(state, action)
+  render()
+  return state;
+}
+
+// dispatch({type: 'INCREASE_COUNT'})
+
+
+render()
